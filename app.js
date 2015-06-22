@@ -8,6 +8,7 @@ var expressLess = require('express-less');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var bootstrap_example = require('./routes/bootstrap_example');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use('/style', expressLess(__dirname + '/public/style'));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/example', bootstrap_example);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
